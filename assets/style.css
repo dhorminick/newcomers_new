@@ -124,3 +124,8 @@
 .cours-search .join-community-btn:hover {
     background-color: #001e00; /* Darker shade when hovered */
 }
+
+
+button.back-to-top {
+  z-index: 100011;
+}
