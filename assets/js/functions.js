@@ -478,7 +478,6 @@ Theme Version:	1.0.0
 					initialHelper:function(){
 						wowAnimation();
 						scrollPageLayout();
-						setHeaderHeight();
 						searchBar();
 						magnificPopupImageView();
 						pageScrollToTop();
@@ -488,7 +487,7 @@ Theme Version:	1.0.0
 						setCountDown();
 						setStylishScroll();
 						manageLeftSideMenu();
-						codeSecurity();
+						// codeSecurity();
 					},
 					
 					afterLoadThePage:function(){
@@ -502,7 +501,6 @@ Theme Version:	1.0.0
 					changeTheScreen:function(){
 						setWindowSizeVar();
 						manageLeftSideMenu();
-						setHeaderHeight();
 					}
 				}
 		

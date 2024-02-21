@@ -1,0 +1,126 @@
+
+
+
+.service-info-bx {
+    margin-top: -250px;
+    z-index: 2;
+    position: relative;
+}
+
+.header_3 {
+    background-color: var(--sc-primary);
+    z-index: 2;
+    position: relative;
+}
+
+.header_3 .intro_wrapper {
+  background-image: url(images/slider/slide1.jpg);
+    min-height: 990px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+   background-repeat: no-repeat;
+   padding: 200px 0;
+   opacity: 0.5;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+.header_3 .intro_wrapper .container{
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+.header_3 .intro_wrapper .container .row {
+    text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+  
+.intro_text {
+  position: relative;
+  z-index: 20;
+}
+.header_3 .intro_wrapper h1 {
+    font-size: 60px;
+    line-height: 80px;
+    font-weight: 900;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.header_3 .intro_wrapper h1 {
+    font-size: 60px;
+    line-height: 80px;
+    font-weight: 900;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    letter-spacing: 2px;}
+
+    .header_3 .intro_wrapper .intro_button a {
+    font-family: "Rubik", sans-serif;
+    background: #14a800;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 0 45px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.header-transparent .is-fixed .menu-bar {
+    position: fixed;
+    background-color: var(--sc-primary);
+}
+
+
+
+
+.section-sp1 {
+  margin: 50px 0;
+}
+
+.cours-search {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center; /* Ensures button is centered */
+}
+
+/* Adjusted styles for a bigger button */
+.cours-search .join-community-btn {
+    border: 0;
+    height: 60px; /* Increase the height to make the button bigger */
+    border-radius: 4px;
+    padding: 15px 30px; /* Increase the padding to make the button bigger */
+    font-size: 20px; /* Increase the font size to make the text bigger */
+    width: auto; /* Adjust as necessary to fit the button text */
+    background-color: #14a800; /* Change the background color */
+    color: #d1ffdb; /* Change the text color */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+    box-shadow: none; /* Optional: Removes any default browser styling */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cours-search .join-community-btn:hover {
+    background-color: #001e00; /* Darker shade when hovered */
+}
