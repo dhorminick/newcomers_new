@@ -1,0 +1,1 @@
+<?php $file_dir = "../../"; $id = "3o4pa-h109nb-by6r7"; include $file_dir."inc/config.inc.php"; include $file_dir."inc/db.inc.php"; include $file_dir."inc/event.layout.php"; ?>
