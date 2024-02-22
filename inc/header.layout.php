@@ -3,7 +3,7 @@
 				<div class="row d-flex justify-content-between">
 					<div class="topbar-left">
 						<ul>
-							<li><a href="/contact-us"><i class="fa fa-question-circle"></i>Help</a></li>
+							<li><a href="contact-us"><i class="fa fa-question-circle"></i>Help</a></li>
 							<li><a href="mailto:<?php echo $siteMainEmail; ?>"><i class="fa fa-envelope-o"></i><?php echo $siteMainEmail; ?></a></li>
 						</ul>
 					</div>
@@ -15,8 +15,8 @@
 									<option data-icon="flag flag-us">English US</option>
 								</select>
 							</li>
-							<li><a href="/auth/sign-in">Sign In</a></li>
-							<li><a href="/auth/sign-up">Sign Up</a></li>
+							<li><a href="auth/sign-in">Sign In</a></li>
+							<li><a href="auth/sign-up">Sign Up</a></li>
 						</ul>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
                 <div class="container clearfix">
 					<!-- Header Logo ==== -->
 					<div class="menu-logo">
-						<a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+						<a href="index.php"><img src="assets/images/logo.png" alt=""></a>
 					</div>
 					<!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,22 +59,22 @@
 					<!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
 						<div class="menu-logo">
-							<a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+							<a href="index.php"><img src="assets/images/logo.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">	
-							<li class="active"><a href="javascript:;">Home</a> </li>
-							<li class="active"><a href="javascript:;">Contact</a> </li>
-							<li class="active"><a href="javascript:;">About Us</a> </li>
-							<li class="active"><a href="javascript:;">Events <i class="fa fa-chevron-down"></i></a>
+							<li class="active"><a href="index">Home</a> </li>
+							<li class="active"><a href="contact-us">Contact</a> </li>
+							<li class="active"><a href="about-us">About Us</a> </li>
+							<li class="active"><a href="event">Events <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.html">Upcoming Events</a></li>
-									<li><a href="index-2.html">Past Event Highlights</a></li>
+									<li><a href="#">Upcoming Events</a></li>
+									<li><a href="#">Past Event Highlights</a></li>
 								</ul>
 							</li>
 							<li class="active"><a href="javascript:;">My Account <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="index.html">Reserved Events</a></li>
-									<li><a href="index-2.html">Account Settings</a></li>
+									<li><a href="#">Reserved Events</a></li>
+									<li><a href="#">Account Settings</a></li>
 								</ul>
 							</li>
 						</ul>

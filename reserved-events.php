@@ -45,7 +45,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li>Reserved Events</li>
 				</ul>
 			</div>
@@ -121,7 +121,7 @@
                             <div style="text-align: center;">
                                 <h3>User Account Error</h3>
                                 <div style="margin: 15px 0px;">Sign In To Access Your Reserved Events!!</div>
-                                <div><a href="/sign-in" class="btn btn-icon btn-primary btn-lg icon-left">Sign In To Account</a></div>
+                                <div><a href="auth/sign-in" class="btn btn-icon btn-primary btn-lg icon-left">Sign In To Account</a></div>
                             </div>
                         </div>
                     </div>

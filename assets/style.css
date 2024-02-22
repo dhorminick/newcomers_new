@@ -71,7 +71,6 @@
 
     .header_3 .intro_wrapper .intro_button a {
     font-family: "Rubik", sans-serif;
-    background: #14a800;
     height: 60px;
     line-height: 60px;
     font-size: 14px;
@@ -127,3 +126,35 @@
 }
 
 
+#bdvgh li{
+	margin: 5px;
+}
+
+#bdvgh i {
+    color: #fff;
+}
+
+.menu-links .nav > li.submenu:hover > a:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    top: 85%;
+    position: absolute;
+    left: 30px;
+    transform: rotate(45deg);
+    z-index: 11;
+}
+
+.menu-links .nav > li.no-submenu:hover > a:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    opacity: 0;
+    top: 85%;
+    position: absolute;
+    left: 30px;
+    transform: rotate(45deg);
+    z-index: 11;
+}

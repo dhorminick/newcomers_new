@@ -36,7 +36,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li>Events</li>
 				</ul>
 			</div>

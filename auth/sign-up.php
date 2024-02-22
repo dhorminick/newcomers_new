@@ -80,77 +80,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account <?php echo $site; ?></title>
 
-    <?php include $file_dir.'inc/header.layout.php'; ?>
+    <?php include $file_dir.'inc/style.layout.php'; ?>
 </head>
-<body>
-    <header class="header_four">
-    <?php include $file_dir.'inc/nav.layout.php'; ?>
-    </header>
-
-    <section class="card">
-        <div class="row card-body">
-            <div class="col-12 col-lg-4"></div>
-            <div class="col-12 col-lg-8">
-                <div class="card-header">
-                    <h4>User Registeration</h4>
-                </div>
-                <div class="row row_card">
-                <div class="form-group col-12 col-lg-6">
-                    <label for="f_name">First Name:</label>
-                    <input type="text" name="" id="f_name" class="form-control" placeholder="...">
-                </div>
-                <div class="form-group col-12 col-lg-6">
-                    <label for="l_name">Last Name:</label>
-                    <input type="text" name="" id="l_name" class="form-control" placeholder="...">
-                </div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="text" name="" id="phone" class="form-control" placeholder="...">
-                </div>
-                <div class="form-group">
-                    <label for="mail">Email Address:</label>
-                    <input type="mail" name="" id="mail" class="form-control" placeholder="...">
-                </div>
-                <div class="row">
-                <div class="form-group col-12 col-lg-6">
-                    <label for="pass">Password:</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" placeholder="..." name="password" id="pass" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text fyeviu" style="cursor:pointer;">
-                                <i class="fa fa-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group col-12 col-lg-6">
-                    <label for="c_pass">Confirm Password:</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" placeholder="..." name="c_password" id="c_pass" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text fyeviui" style="cursor:pointer;">
-                                <i class="fa fa-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="form-group center">
-                    <br>
-                    <input type="checkbox" id="confirm_auth">
-                    By confirming, you agree to our Candidate Guidelines<br>
-                    You are also agreeing to our <a href="http://">Terms of Use</a> and <a href="http://">Privacy Policy</a>
-                </div>
-                <div class="form-group center">
-                    <button type="submit" disabled id="btn_auth" class="btn btn-lg btn-primary btn-icon icon-left">Create Account</button>
-                </div>
-                <div class="form-group center">
-                    Already have an account? <a href="http://">Login</a>
-                </div>
-            </div>
-        </div>
-    </section>
+ <body id="bg">
+  <div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<div class="account-form">
+		<div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
+			<a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+		</div>
+		<div class="account-form-inner">
+			<div class="account-container">
+				<div class="heading-bx left">
+					<h2 class="title-head">Sign Up <span>Now</span></h2>
+					<p>Login Your Account <a href="login.html">Click here</a></p>
+				</div>	
+				<form class="contact-bx">
+					<div class="row placeani">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Your Name</label>
+									<input name="dzName" type="text" required="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Your Email Address</label>
+									<input name="dzName" type="email" required="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Your Password</label>
+									<input name="dzEmail" type="password" class="form-control" required="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 m-b30">
+							<button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
+						</div>
+						<div class="col-lg-12">
+							<h6>Sign Up with Social media</h6>
+							<div class="d-flex">
+								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
+								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+   
     
     <?php include $file_dir.'inc/auth_footer.layout.php'; ?>
     <?php include $file_dir.'inc/scripts.layout.php'; ?>
@@ -201,85 +188,3 @@
 </script>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-
-	<title>Sign Up <?php echo $site; ?></title>
-	<?php include $file_dir.'inc/tags.layout.php'; ?>
-	<?php include $file_dir.'inc/style.layout.php'; ?>
-	<link rel="stylesheet" href="assets/main.css">
-	
-</head>
-<body id="bg">
-<div class="page-wraper">
-	<div id="loading-icon-bx"></div>
-	<div class="account-form">
-		<div class="account-head" style="background-image:url(../assets/images/background/bg2.jpg);">
-			<a href="index.html"><img src="../assets/images/logo-white-2.png" alt=""></a>
-		</div>
-		<div class="account-form-inner">
-            <div class="account-container">
-                <div class="heading-bx left">
-                    <?php include $file_dir.'inc/alert.inc.php'; ?>
-					<h2 style="margin-bottom: 0px !important;">Create Account!!</h2>
-                    <p>Please enter your details to create your account:</p>
-				</div>	
-				<form class="contact-bx" method="post">
-					<div class="row placeani">
-						<div class="col-lg-12">
-							<div class="form-group">
-								<div class="input-group">
-									<label>Email Address:</label>
-									<input name="email" type="email" required="" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="form-group">
-								<div class="input-group"> 
-									<label>Password:</label>
-                                    <div class="input-group" style="display:flex;flex-direction: row; flex-wrap: nowrap;">
-                                        <input type="password" class="form-control" name="password" id="pass" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text fyeviu" style="cursor:pointer;">
-                                                <i class="fa fa-eye"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="form-group form-forget">
-								<div class="custom-control custom-checkbox">
-								</div>
-								<a href="reset-password" class="ml-auto">Forgot Password?</a>
-							</div>
-						</div>
-						<div class="col-lg-12" style="margin-bottom: 10px;">
-							<button name="submit" type="submit" value="Submit" class="btn button-md" style="width:100%;">Login</button>
-						</div>
-						<div class="col-lg-12 text-center">
-                            <h6>or</h6>
-							<div class="d-flex">
-								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
-							</div>
-						</div>
-                        <hr>
-                        <div class="col-lg-12 text-center" style="margin-top:20px;">
-                            Don't have an account? <a href="sign-in.php" style="text-decoration: underline;">Sign up</a>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- External JavaScripts -->
-<?php include $file_dir.'inc/scripts.layout.php'; ?>
-</body>
-
-</html>
