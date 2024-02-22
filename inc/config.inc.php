@@ -1,8 +1,8 @@
 <?php
     $site = '| New Comers Union';
-    $regMailSender = 'etiketochukwu@gmail.com';
-    $siteMainPhone = '+000-2356-222';
-    $siteMainEmail = 'contact@yourdomain.com';
+    $regMailSender = 'info@newcomersunion.com';
+    $siteMainPhone = '+000-1111-222';
+    $siteMainEmail = 'contact@newcomersunion.com';
     $to_contactus = 'info@newcomersunion.com';
 
     $page_fb = 'https://facebook.com/newcomersunion';
@@ -19,6 +19,37 @@
         } 
                 
         return $random_string;
+    }
+
+    function truncateStr($string, $length, $dots = "...") {
+        return (strlen($string) > $length) ? substr($string, 0, $length - strlen($dots)) . $dots : $string;
+    }
+
+    function cleanData($data, $num){
+        $data = str_replace( '%p%' , ' ', $data );
+        $data = str_replace( '%/p%', ' ', $data);
+        $data = str_replace( '%b%' , ' ', $data );
+        $data = str_replace( '%/b%', ' ', $data );
+        $data = str_replace( '%u%' , ' ', $data );
+        $data = str_replace( '%/u%', ' ', $data );
+        $data = str_replace( '%\\%', ' ', $data );
+        $data = str_replace( 'font-size' , ' ', $data );
+        $data = str_replace( 'font-family' , ' ', $data );
+        $data = str_replace( 'h3' , ' ', $data );
+        $data = str_replace( 'h1' , ' ', $data );
+        $data = str_replace( 'h2' , ' ', $data );
+
+        $data = str_replace( '<p>' , ' ', $data );
+        $data = str_replace( '</p>', ' ', $data);
+        $data = str_replace( '<b>' , ' ', $data );
+        $data = str_replace( '</b>', ' ', $data );
+        $data = str_replace( '<u>' , ' ', $data );
+        $data = str_replace( '</u>', ' ', $data );
+        $data = str_replace( '%\\%', ' ', $data );
+        $data = str_replace( '<li' , ' ', $data );
+
+        $data = wordwrap($data, $num);
+        return $data;
     }
 
     function eventName($data){

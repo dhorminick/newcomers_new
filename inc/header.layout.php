@@ -71,12 +71,14 @@
 									<li><a href="index-2.html">Past Event Highlights</a></li>
 								</ul>
 							</li>
+							<?php if($signedIn == true){ ?>
 							<li class="active"><a href="javascript:;">My Account <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Reserved Events</a></li>
 									<li><a href="index-2.html">Account Settings</a></li>
 								</ul>
 							</li>
+							<?php } ?>
 						</ul>
 						<div class="nav-social-link">
 							<a href="<?php echo $page_fb; ?>" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -94,4 +96,8 @@
 			#bdvgh li{
 				margin: 5px;
 			}
+			/* .header .is-fixed .menu-bar{
+				background-color: var(--sc-primary) !important;
+				color: white;
+			} */
 		</style>

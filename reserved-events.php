@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $file_dir = '';
     $file_subdir = '';
     include $file_dir.'inc/config.inc.php';
@@ -45,7 +46,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li>Reserved Events</li>
 				</ul>
 			</div>

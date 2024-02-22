@@ -44,8 +44,12 @@
     }
 
     function _reg($sender, $recipient, $subject, $otp){
-        $body = '';
+        $body = 'u';
         $sent = _sendmail($sender, $recipient, $body, $subject);
+        if ($sent['error'] == 'SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting') {
+            $sent['error'] = 'Connection Error!!';
+        } else {}
+        
         return $sent;
     }
 

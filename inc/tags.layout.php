@@ -5,15 +5,11 @@
 	<meta name="robots" content="" />
 	
 	<!-- DESCRIPTION -->
-	<meta name="description" content="EduChamp : Education HTML Template" />
+	<meta name="description" content="NewComersUnion" />
 	
 	<!-- OG -->
-	<meta property="og:title" content="EduChamp : Education HTML Template" />
-	<meta property="og:description" content="EduChamp : Education HTML Template" />
+	<meta property="og:title" content="NewComersUnion" />
+	<meta property="og:description" content="NewComersUnion" />
 	<meta property="og:image" content="" />
-	<meta name="format-detection" content="telephone=no">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- FAVICONS ICON ============================================= -->
-	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
