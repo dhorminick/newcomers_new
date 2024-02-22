@@ -13,3 +13,22 @@
 <script src="<?php echo $file_dir; ?>assets/js/functions.js"></script>
 <script src="<?php echo $file_dir; ?>assets/js/contact.js"></script>
 <script src='<?php echo $file_dir; ?>assets/vendors/switcher/switcher.js'></script>
+
+<script>
+			
+			$("#subscription-orm").submit(function (e) {
+				e.preventDefault();
+			
+				var formValues = $(this).serialize();
+			
+				$.post("/ajax/main.php", {
+					insertUser: formValues,
+				}).done(function (data) {
+					$("'ajax-message'").html(data);
+					setTimeout(function () {
+						$(".ajax-message").hide();
+                        $("#news_mail").html('');
+					}, 2000);
+				});
+			});
+		</script>

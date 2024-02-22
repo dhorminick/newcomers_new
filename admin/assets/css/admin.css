@@ -1,6 +1,7 @@
 :root {
   --main: #14a800;
   --secondary: #001e00;
+  --deep: #033500;
 }
 .card {
   padding: 10px;
@@ -128,4 +129,8 @@
 .header_inner.admin__event .intro_wrapper {
   background: url("images/banner/inner_banner_1.jpg") no-repeat center center !important;
   min-height: 150px !important;
+}
+:root {
+  --br: 10px;
+  --res-color: #14a800;
 }

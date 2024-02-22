@@ -1,5 +1,6 @@
 <?php
     $file_dir = '../';
+    $file_subdir = '';
     include $file_dir.'inc/config.inc.php';
     include $file_dir.'inc/db.inc.php'; 
 ?>
@@ -7,34 +8,8 @@
 <html lang="en">
 
 <head>
-
-	<!-- META ============================================= -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="" />
-	
-	<!-- DESCRIPTION -->
-	<meta name="description" content="EduChamp : Education HTML Template" />
-	
-	<!-- OG -->
-	<meta property="og:title" content="EduChamp : Education HTML Template" />
-	<meta property="og:description" content="EduChamp : Education HTML Template" />
-	<meta property="og:image" content="" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- FAVICONS ICON ============================================= -->
-	<link rel="icon" href="../error-404.html" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-	
-	<!-- PAGE TITLE HERE ============================================= -->
-	<title>EduChamp : Education HTML Template </title>
-	
-	<!-- MOBILE SPECIFIC ============================================= -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- All PLUGINS CSS ============================================= -->
+    <?php include $file_dir.'inc/admin_tags.layout.php'; ?>
+	<title>Admin Dashboard <?php echo $site; ?></title>
 	<?php include $file_dir.'inc/admin_style.inc.php'; ?>
 	
 </head>
@@ -42,7 +17,7 @@
 	
 	<!-- header start -->
 	<header class="ttr-header">
-		<?php include $file_dir.'inc/header.layout.php'; ?>
+		<?php include $file_dir.'inc/admin_header.layout.php'; ?>
 	</header>
 	<!-- header end -->
 	<!-- Left sidebar menu start -->
@@ -53,7 +28,6 @@
 	<main class="ttr-wrapper">
 		<div class="container-fluid">
 			<div class="db-breadcrumb">
-				<h4 class="breadcrumb-title">Dashboard</h4>
 				<ul class="db-breadcrumb-list">
 					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 					<li>Dashboard</li>
@@ -169,7 +143,7 @@
 			<!-- Card END -->
 			<div class="row">
 				<!-- Your Profile Views Chart -->
-				<div class="col-lg-8 m-b30">
+				<!-- <div class="col-lg-8 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
 							<h4>Your Profile Views</h4>
@@ -178,9 +152,9 @@
 							<canvas id="chart" width="100" height="45"></canvas>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- Your Profile Views Chart END-->
-				<div class="col-lg-4 m-b30">
+				<!-- <div class="col-lg-4 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
 							<h4>Notifications</h4>
@@ -252,8 +226,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-6 m-b30">
+				</div> -->
+				<!-- <div class="col-lg-6 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
 							<h4>New Users</h4>
@@ -383,14 +357,14 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-lg-12 m-b30">
 					<div class="widget-box">
 						<div class="wc-title custom">
 							<h4>Recently Opened Events:</h4>
                             <div class="wc-title-action">
-                                <a href="event/create-event"><button class="btn btn-primary btn-icon icon-left"><i class="fas fa-plus"></i> Create New Event</button></a>
-                                <a href="events"><button class="btn btn-secondary btn-icon icon-right">View All <i class="fas fa-arrow-right"></i></button></a>
+                                <a href="event/create-event"><button class="btn btn-primary btn-icon icon-left"><i class="fa fa-plus"></i> Create New Event</button></a>
+                                <a href="events"><button class="btn btn-secondary btn-icon icon-right">View All <i class="fa fa-arrow-right"></i></button></a>
                             </div>
 						</div>
 						<div class="widget-inner">
@@ -400,10 +374,10 @@
                                         <tr>
                                             <th style="width:10%;">S/N</th>
                                             <th style="width:37%;">Event Title</th>
-                                            <th style="width:10%;">Event Price</th>
+                                            <th style="width:13%;">Event Price</th>
                                             <th style="width:23%;">Event Date</th>
                                             <th style="width:10%;">Participants</th>
-                                            <th style="width:10%;">...</th>
+                                            <th style="width:7%;">...</th>
                                         </tr>
                                         <?php 
                                             $checkIfEventExists = "SELECT * FROM newcomers_events ORDER BY id DESC limit 5";
@@ -426,7 +400,7 @@
                                             <td><?php echo $event_price; ?></td>
                                             <td><?php echo date("D\. jS \of F Y", strtotime($item["event_date"])); ?></td>
                                             <td><?php echo $participant; ?></td>
-                                            <td><a href='events?id=<?php echo $item['event_id']; ?>' class="btn btn-primary btn-md btn-icon icon-right">View <i class="fas fa-arrow-right"></i></a></td>
+                                            <td><a href='events?id=<?php echo $item['event_id']; ?>' class="btn btn-primary button-sm btn-icon icon-right">View <i class="fa fa-arrow-right"></i></a></td>
                                         </tr>
                                         <?php } }else{ #empty ?>
                                         <tr><td style="margin:10px 0px;text-align:center;" colspan='12'>No Registered User Yet!!</td></tr>
@@ -435,6 +409,122 @@
                                 </table>
                                 <div class="text-right" style="margin-top:20px;">Showing <?php echo $beg; ?> - <?php echo $reg_count; ?> of <?php echo $reg_count; ?> Opened Events</div>
                             </div>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-8 m-b30">
+					<div class="widget-box">
+						<div class="wc-title custom">
+							<h4>New Users:</h4>
+                            <div class="wc-title-action">
+                                <a href="users"><button class="btn btn-secondary btn-icon icon-right">View All <i class="fa fa-arrow-right"></i></button></a>
+                            </div>
+						</div>
+						<div class="widget-inner">
+                            <div class="event_list">
+                                <table id="table" class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width:10%;">S/N</th>
+                                            <th style="width:35%;">Email Address</th>
+                                            <th style="width:35%;">Full Name</th>
+                                            <th style="width:20%;">Date Of Registration</th>
+                                        </tr>
+                                        <?php 
+                                            $checkIfUserExists = "SELECT * FROM newcomers_users ORDER BY id DESC limit 5";
+                                            $userExists = $con->query($checkIfUserExists);
+                                            $i = 0;
+                                            if($userExists->num_rows > 0){
+                                                $reg_count = $userExists->num_rows;
+                                                if($reg_count > 0){$beg = '1';}else{$beg = '0';}
+                                                while ($item = $userExists->fetch_assoc()) { $i++;
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $item['email']; ?></td>
+                                            <td><?php echo ucwords($item['firstname'].' '.$item['lastname']); ?></td>
+                                            <td><?php echo date("D\. jS \of F Y", strtotime($item["reg_date"])); ?></td>
+                                        </tr>
+                                        <?php } }else{ #empty ?>
+                                        <tr><td style="margin:10px 0px;text-align:center;" colspan='12'>No Registered User Yet!!</td></tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                <div class="text-right" style="margin-top:20px;">Showing <?php echo $beg; ?> - <?php echo $reg_count; ?> of <?php echo $reg_count; ?> Registered User</div>
+                            </div>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-4 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Notifications</h4>
+						</div>
+						<div class="widget-inner">
+							<div class="noti-box-list">
+								<ul>
+									<li>
+										<span class="notification-icon dashbg-gray">
+											<i class="fa fa-check"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 02:14</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-yellow">
+											<i class="fa fa-shopping-cart"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Your order is placed</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 7 Min</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-red">
+											<i class="fa fa-bullhorn"></i>
+										</span>
+										<span class="notification-text">
+											<span>Your item is shipped</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 2 May</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-green">
+											<i class="fa fa-comments-o"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Sneha Jogi</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 14 July</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-primary">
+											<i class="fa fa-file-word-o"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 15 Min</span>
+										</span>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

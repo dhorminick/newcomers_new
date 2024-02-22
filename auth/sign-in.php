@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     $file_dir = '../';
     include $file_dir.'inc/config.inc.php'; 
     require $file_dir.'inc/db.inc.php'; 
@@ -11,7 +12,7 @@
     $message = [];
     $auth_e = false;
     
-    if (isset($_POST['create-account'])) {
+    if (isset($_POST['sign-in'])) {
 
         $email = sanitizePlus($_POST["email"]);
         $password = sanitizePlus($_POST["password"]);
@@ -28,12 +29,12 @@
                 $email = $row['email'];
 
                 if ($activated == 'false') {
-                    $auth_error = false;
-                    #array_push($message, "Error 402: Account Authentication Complete!!");
+                    header('Location: ?auth=false&e='.md5($email));
+                    exit();
                 } else {
                     $auth_error = true;
                     #login if authenticated
-                    array_push($message, "<i class='fas fa-check'></i> Authentication Completed Successfully!!");
+                    array_push($message, "<i class='fas fa-check'></i> Sign In Successfully!!");
 
                     #login
                     $_SESSION["loggedIn"] = true;
@@ -48,133 +49,114 @@
         }
 
     }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account <?php echo $site; ?></title>
 
-    <?php include $file_dir.'inc/header.layout.php'; ?>
+	<title>Sign In <?php echo $site; ?></title>
+	<?php include $file_dir.'inc/tags.layout.php'; ?>
+	<?php include $file_dir.'inc/style.layout.php'; ?>
+	<link rel="stylesheet" href="assets/main.css">
+	
 </head>
-<body>
-    <header class="header_four">
-    <?php include $file_dir.'inc/nav.layout.php'; ?>
-    </header>
-
-    <section class="card">
-        <div class="row card-body">
-            <div class="col-12 col-lg-4"></div>
-            <?php if ($auth_e == false){ ?>
-            <div class="col-12 col-lg-8">
-                <?php require $file_dir.'inc/alert.inc.php'; ?>
-                <div class="card-header">
-                    <h4>Login</h4>
-                    <p>Welcome back! please Enter your details:</p>
-                </div>
-                <form method="post">
-                <div class="form-group row_card">
-                    <label for="mail">Email Address:</label>
-                    <input type="mail" name="email" id="mail" class="form-control" placeholder="..." required>
-                </div>
-                <div class="form-group">
-                    <label for="pass">Password:</label>
-                    <a href="#" class="fgpw">Forgot Password</a>
-                    <div class="input-group">
-                        <input type="password" class="form-control" placeholder="..." name="password" id="pass" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text fyeviu" style="cursor:pointer;">
-                                <i class="fa fa-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group center conf_btn">
-                    <button type="submit" name="create-account" class="btn btn-lg btn-primary btn-icon icon-left">Login</button>
-                </div>
-                </form>
-                <div class="form-group center">
-                    Don't have an account? <a href="sign-in.php">Sign up</a>
-                </div>
-            </div>
+<body id="bg">
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<div class="account-form">
+		<div class="account-head" style="background-image:url(../assets/images/background/bg2.jpg);">
+			<a href="index.html"><img src="../assets/images/logo-white-2.png" alt=""></a>
+		</div>
+		<div class="account-form-inner">
+            <?php if(isset($_GET["auth"]) && isset($_GET["e"]) && isset($_GET["auth"]) == false && isset($_GET["e"]) !== null){ ?>
+            <div class="account-container">
+				<div class="heading-bx left">
+					<h2 style="margin-bottom: 0px !important;">Welcome Back!!</h2>
+                    <p>Email Address Not Authenticated Yet!</p>
+				</div>	
+				<form class="contact-bx" method="post">
+					<div class="row placeani">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Email Address:</label>
+									<input name="email" type="email" required="" readonly value="<?php echo $email; ?>" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12" style="margin-bottom: 10px;">
+							<button name="resend-auth" type="submit" class="btn button-md" style="width:100%;">Resend Authentication Email</button>
+						</div>
+					</div>
+				</form>
+			</div>
             <?php }else{ ?>
-            <?php if ($auth_error == false){ ?>
-            <div class="col-12 col-lg-8 flex-center">
-            <?php require $file_dir.'inc/alert.inc.php'; ?>
-            <div class="txt">
-                <div class="card-header">
-                    <h4>Login</h4>
-                </div>
-                <p>Account Authentication Error!!</p>
-                <form method="post" action="activate-account">
-                    <input type="hidden" name="e" value="<?php weirdlyEncode($email); ?>" required>
-                    <button class="btn btn-md btn-primary btn-icon icon-left" name="resend-email"><i class="fas fa-check"></i> Resend Email Token</button>
-                </form>
-            </div>
-            </div>
-            <?php }else{ ?>
-            <div class="col-12 col-lg-8 flex-center">
-            <?php require $file_dir.'inc/alert.inc.php'; ?>
-            <div class="txt">
-                <div class="card-header">
-                    <h4>Login</h4>
-                </div>
-                <p>Login Successful!!</p>
-                <a href="/"><button class="btn btn-md btn-primary btn-icon icon-left"><i class="fas fa-arrow-left"></i> Home</button></a>
-            </div>
-            </div>
+			<div class="account-container">
+                <div class="heading-bx left">
+                    <?php include $file_dir.'inc/alert.inc.php'; ?>
+					<h2 style="margin-bottom: 0px !important;">Welcome Back!!</h2>
+                    <p>Please enter your account details:</p>
+				</div>	
+				<form class="contact-bx" method="post">
+					<div class="row placeani">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Email Address:</label>
+									<input name="email" type="email" required="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Password:</label>
+                                    <div class="input-group" style="display:flex;flex-direction: row; flex-wrap: nowrap;">
+                                        <input type="password" class="form-control" name="password" id="pass" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text fyeviu" style="cursor:pointer;">
+                                                <i class="fa fa-eye"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group form-forget">
+								<div class="custom-control custom-checkbox">
+								</div>
+								<a href="reset-password" class="ml-auto">Forgot Password?</a>
+							</div>
+						</div>
+						<div class="col-lg-12" style="margin-bottom: 10px;">
+							<button name="submit" type="submit" value="Submit" class="btn button-md" style="width:100%;">Login</button>
+						</div>
+						<div class="col-lg-12 text-center">
+                            <h6>or</h6>
+							<div class="d-flex">
+								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
+							</div>
+						</div>
+                        <hr>
+                        <div class="col-lg-12 text-center" style="margin-top:20px;">
+                            Don't have an account? <a href="sign-in.php" style="text-decoration: underline;">Sign up</a>
+						</div>
+					</div>
+				</form>
+			</div>
             <?php } ?>
-            <?php } ?>
-        </div>
-    </section>
-    
-    <?php include $file_dir.'inc/auth_footer.layout.php'; ?>
-    <?php include $file_dir.'inc/scripts.layout.php'; ?>
+		</div>
+	</div>
+</div>
+<!-- External JavaScripts -->
+<?php include $file_dir.'inc/scripts.layout.php'; ?>
 </body>
+
 </html>
-
-<style>
-    .row_card{
-        margin-top: 30px;
-    }
-    .form-group.center{
-        text-align: center;
-    }
-    .btn:disabled{
-        cursor: not-allowed;
-    }
-    .form-group.center.conf_btn{
-        margin-top: 20px;
-    }
-    .card-header{
-        text-align: center;
-    }
-
-    .form-group input{
-        padding: 20px;
-    }
-
-    .fgpw{
-        float: right;
-    }
-    .flex-center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .flex-center div.txt{
-        text-align: center;
-        padding: 20px;
-        width: 80%;
-    }
-    .flex-center div.txt .card-header{
-        margin-bottom: 20px;
-    }
-</style>
 <script>
     $(".fyeviu").on("click", function () {
     var x = document.getElementById("pass");

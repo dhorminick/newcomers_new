@@ -5,6 +5,11 @@
     $siteMainEmail = 'contact@yourdomain.com';
     $to_contactus = 'info@newcomersunion.com';
 
+    $page_fb = 'https://facebook.com/newcomersunion';
+    $page_ig = 'https://instagram.com/newcomersunion';
+    $page_x = 'https://twitter.com/newcomersunion';
+    $page_ln = 'https://linkedin.com/newcomersunion';
+
     function secure_random_string($length) { 
         $random_string = ''; 
         for($i = 0; $i < $length; $i++) { 

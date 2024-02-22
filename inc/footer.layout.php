@@ -7,14 +7,14 @@
 						</div>
 						<div class="pt-social-link">
 							<ul class="list-inline m-a0">
-								<li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="<?php echo $page_fb; ?>" target="_blank" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="<?php echo $page_x; ?>" target="_blank" class="btn-link"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="<?php echo $page_ig; ?>" target="_blank" class="btn-link"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="<?php echo $page_ln; ?>" target="_blank" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
 							</ul>
 						</div>
 						<div class="pt-btn-join">
-							<a href="#" class="btn ">Join Now</a>
+							<a href="#" class="btn">Join Event Community</a>
 						</div>
 					</div>
 				</div>
@@ -26,10 +26,10 @@
                             <h5 class="footer-title">Sign Up For A Newsletter</h5>
 							<p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
                             <div class="subscribe-form m-b20">
-								<form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
+								<form id="subscription-orm">
 									<div class="ajax-message"></div>
 									<div class="input-group">
-										<input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
+										<input name="email" id='news_mail' required="required"  class="form-control" placeholder="Your Email Address" type="email">
 										<span class="input-group-btn">
 											<button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
 										</span> 
@@ -44,32 +44,19 @@
 								<div class="widget footer_widget">
 									<h5 class="footer-title">Company</h5>
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="about-1.html">About</a></li>
-										<li><a href="faq-1.html">FAQs</a></li>
-										<li><a href="contact-1.html">Contact</a></li>
+										<li><a href="/">Home</a></li>
+										<li><a href="about-us">About</a></li>
+										<li><a href="contact-us">Contact</a></li>
 									</ul>
 								</div>
 							</div>
-							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
+							<div class="col-8 col-lg-8 col-md-4 col-sm-4">
 								<div class="widget footer_widget">
-									<h5 class="footer-title">Get In Touch</h5>
+									<h5 class="footer-title">Events</h5>
 									<ul>
-										<li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
-										<li><a href="blog-classic-grid.html">Blog</a></li>
-										<li><a href="portfolio.html">Portfolio</a></li>
-										<li><a href="event.html">Event</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-4 col-lg-4 col-md-4 col-sm-4">
-								<div class="widget footer_widget">
-									<h5 class="footer-title">Courses</h5>
-									<ul>
-										<li><a href="courses.html">Courses</a></li>
-										<li><a href="courses-details.html">Details</a></li>
-										<li><a href="membership.html">Membership</a></li>
-										<li><a href="profile.html">Profile</a></li>
+										<li><a href="/reserved-events">My Reserved Events</a></li>
+										<li><a href="/upcoming-events">Upcoming Events</a></li>
+										<li><a href="/event-highlights">Past Events Highlights</a></li>
 									</ul>
 								</div>
 							</div>
@@ -96,7 +83,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-right"> Copyright &copy; NewComersUnion <?php echo date("Y");?></div>
                 </div>
             </div>
         </div>

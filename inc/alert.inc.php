@@ -1,6 +1,6 @@
 <?php if (count($message) > 0) : ?>
 					<!-- <div class="row"> -->
-						<div class="alert-div" style="display: flex;justify-content:center;">
+						<div class="alert-div" style="display: flex;justify-content:center;font-family:inherit !important;">
 						<?php foreach ($message as $error) : ?>
 							<div class="alert alert-primary alert-dismissible show col-lg-10 col-12">
 								<div class="alert-body">

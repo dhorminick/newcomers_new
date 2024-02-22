@@ -199,3 +199,87 @@
     }
     });
 </script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<title>Sign Up <?php echo $site; ?></title>
+	<?php include $file_dir.'inc/tags.layout.php'; ?>
+	<?php include $file_dir.'inc/style.layout.php'; ?>
+	<link rel="stylesheet" href="assets/main.css">
+	
+</head>
+<body id="bg">
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<div class="account-form">
+		<div class="account-head" style="background-image:url(../assets/images/background/bg2.jpg);">
+			<a href="index.html"><img src="../assets/images/logo-white-2.png" alt=""></a>
+		</div>
+		<div class="account-form-inner">
+            <div class="account-container">
+                <div class="heading-bx left">
+                    <?php include $file_dir.'inc/alert.inc.php'; ?>
+					<h2 style="margin-bottom: 0px !important;">Create Account!!</h2>
+                    <p>Please enter your details to create your account:</p>
+				</div>	
+				<form class="contact-bx" method="post">
+					<div class="row placeani">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group">
+									<label>Email Address:</label>
+									<input name="email" type="email" required="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<div class="input-group"> 
+									<label>Password:</label>
+                                    <div class="input-group" style="display:flex;flex-direction: row; flex-wrap: nowrap;">
+                                        <input type="password" class="form-control" name="password" id="pass" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text fyeviu" style="cursor:pointer;">
+                                                <i class="fa fa-eye"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group form-forget">
+								<div class="custom-control custom-checkbox">
+								</div>
+								<a href="reset-password" class="ml-auto">Forgot Password?</a>
+							</div>
+						</div>
+						<div class="col-lg-12" style="margin-bottom: 10px;">
+							<button name="submit" type="submit" value="Submit" class="btn button-md" style="width:100%;">Login</button>
+						</div>
+						<div class="col-lg-12 text-center">
+                            <h6>or</h6>
+							<div class="d-flex">
+								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
+							</div>
+						</div>
+                        <hr>
+                        <div class="col-lg-12 text-center" style="margin-top:20px;">
+                            Don't have an account? <a href="sign-in.php" style="text-decoration: underline;">Sign up</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- External JavaScripts -->
+<?php include $file_dir.'inc/scripts.layout.php'; ?>
+</body>
+
+</html>

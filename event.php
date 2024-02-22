@@ -7,9 +7,12 @@
 <html lang="en">
 
 <head>
-	<title?>EduChamp : Education HTML Template </title>
+
+	<title>EduChamp : Education HTML Template </title>
 	<?php include $file_dir.'inc/tags.layout.php'; ?>
 	<?php include $file_dir.'inc/style.layout.php'; ?>
+	<link rel="stylesheet" href="assets/main.css">
+	
 </head>
 <body id="bg">
 <div class="page-wraper">
