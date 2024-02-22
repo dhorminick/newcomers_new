@@ -60,6 +60,10 @@
     letter-spacing: 2px;
 }
 
+.header_3 .intro_wrapper p {
+    color: #d1ffdb;
+}
+
 .header_3 .intro_wrapper h1 {
     font-size: 60px;
     line-height: 80px;
@@ -73,7 +77,7 @@
     font-family: "Rubik", sans-serif;
     height: 60px;
     line-height: 60px;
-    font-size: 14px;
+    font-size: 20px;
     color: #ffffff;
     padding: 0 45px;
     border-radius: 50px;
