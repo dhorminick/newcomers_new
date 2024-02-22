@@ -3,14 +3,16 @@
 
 .service-info-bx {
     margin-top: -250px;
-    z-index: 2;
     position: relative;
 }
 
 .header_3 {
     background-color: var(--sc-primary);
-    z-index: 2;
     position: relative;
+}
+
+.header_3.ovpr-dark::after{
+    opacity: 0.6;
 }
 
 .header_3 .intro_wrapper {
@@ -22,7 +24,6 @@
     position: relative;
    background-repeat: no-repeat;
    padding: 200px 0;
-   opacity: 0.5;
    text-align: center;
    display: flex;
    justify-content: center;
@@ -47,7 +48,7 @@
   
 .intro_text {
   position: relative;
-  z-index: 20;
+
 }
 .header_3 .intro_wrapper h1 {
     font-size: 60px;
@@ -126,6 +127,3 @@
 }
 
 
-button.back-to-top {
-  z-index: 100011;
-}

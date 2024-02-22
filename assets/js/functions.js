@@ -480,120 +480,18 @@ Theme Version:	1.0.0
 					
 					live: constantly check for new WOW elements on the page. 
 					*/
-					if(!checkSelectorExistence('.wow')){return;}
-					var wow = new WOW(
-					{
-					  boxClass:     'wow',      
-					  animateClass: 'animated', 
-					  offset:       10,          
-					  mobile:       false,       
-					  live:         true
-					});
-					wow.init();	
-				}
-				
-				/* Left Side Menu */
-				var manageLeftSideMenu = function(){
-					jQuery('.menuicon').unbind().on('click',function(){
-						$(this).toggleClass('open');
-					});
-					
-					if(windowSize <= 991 ){
-						jQuery('.navbar-nav > li > a, .sub-menu > li > a').unbind().on('click', function(e){
-								//e.preventDefault();
-								if(jQuery(this).parent().hasClass('open'))
-								{
-									jQuery(this).parent().removeClass('open');
-								}
-								else{
-									jQuery(this).parent().parent().find('li').removeClass('open');
-									jQuery(this).parent().addClass('open');
-								}
-							});
-						}
-					}
-				
-				
-				var managePlaceholderStyle = function()
-				{
-					if(!checkSelectorExistence('.placeani')){return;}
-					$('.placeani input, .placeani textarea').focus(function(){
-					  $(this).parents('.form-group').addClass('focused');
-					});
-					
-					$('.placeani input, .placeani textarea').blur(function(){
-					  var inputValue = $(this).val();
-					  if ( inputValue == "" ) {
-						$(this).removeClass('filled');
-						$(this).parents('.form-group').removeClass('focused');  
-					  } else {
-						$(this).addClass('filled');
-					  }
-					});
-				}
-				
-				var manageLoader = function() {
-					setTimeout(function(){
-						jQuery('#loading-icon-bx').remove();
-					}, 0);
-				}
-				
-				// var codeSecurity = function() {
-				// 	document.onkeydown = function(e) {
-                //         if (e.keyCode === 123 || (e.ctrlKey && 
-                //             (e.keyCode === 67 || 
-                //              e.keyCode === 115 ||
-                //              e.keyCode === 99 ||
-                //              e.keyCode === 85 || 
-                //              e.keyCode === 117))) {
-                //             return false;
-                //         } else {
-                //             return true;
-                //         }
-                //     };
-                	
-                // 	document.addEventListener("contextmenu", function(e){
-                //       e.preventDefault();
-                //     }, false);
-                    
-                //     $(document).keypress("u",function(e) {
-                //       if(e.ctrlKey){return false;}
-                //       else {return true;}
-                //     });
-				// }
-				
-				/* Function ============ */
-				return {
-					initialHelper:function(){
-						wowAnimation();
-						scrollPageLayout();
-						searchBar();
-						magnificPopupImageView();
-						pageScrollToTop();
-						managePlaceholderStyle();
-						setFooterHeight();
-						setStickyheader();
-						setCountDown();
-						setStylishScroll();
-						manageLeftSideMenu();
-						// codeSecurity();
-					},
-					
-					afterLoadThePage:function(){
-						setBootstrapDropDown();
-						setDivSameHeight('.equal-height-container .equal-height-container-item');
-						setCounterUp();
-						masonryLayout();
-						manageLoader();
-					},
-					
-					changeTheScreen:function(){
-						setWindowSizeVar();
-						manageLeftSideMenu();
-					}
-				}
-		
-	}(jQuery);
+      if (!checkSelectorExistence(".wow")) {
+        return;
+      }
+      var wow = new WOW({
+        boxClass: "wow",
+        animateClass: "animated",
+        offset: 10,
+        mobile: false,
+        live: true,
+      });
+      wow.init();
+    };
 
     /* Left Side Menu */
     var manageLeftSideMenu = function () {
@@ -643,27 +541,29 @@ Theme Version:	1.0.0
       }, 0);
     };
 
-    var codeSecurity = function () {
-      // document.onkeydown = function(e) {
-      //     if (e.keyCode === 123 || (e.ctrlKey &&
-      //         (e.keyCode === 67 ||
-      //          e.keyCode === 115 ||
-      //          e.keyCode === 99 ||
-      //          e.keyCode === 85 ||
-      //          e.keyCode === 117))) {
-      //         return false;
-      //     } else {
-      //         return true;
-      //     }
-      // };
-      // document.addEventListener("contextmenu", function(e){
-      //   e.preventDefault();
-      // }, false);
-      // $(document).keypress("u",function(e) {
-      //   if(e.ctrlKey){return false;}
-      //   else {return true;}
-      // });
-    };
+    // var codeSecurity = function() {
+    // 	document.onkeydown = function(e) {
+    //         if (e.keyCode === 123 || (e.ctrlKey &&
+    //             (e.keyCode === 67 ||
+    //              e.keyCode === 115 ||
+    //              e.keyCode === 99 ||
+    //              e.keyCode === 85 ||
+    //              e.keyCode === 117))) {
+    //             return false;
+    //         } else {
+    //             return true;
+    //         }
+    //     };
+
+    // 	document.addEventListener("contextmenu", function(e){
+    //       e.preventDefault();
+    //     }, false);
+
+    //     $(document).keypress("u",function(e) {
+    //       if(e.ctrlKey){return false;}
+    //       else {return true;}
+    //     });
+    // }
 
     /* Function ============ */
     return {
@@ -680,7 +580,7 @@ Theme Version:	1.0.0
         setCountDown();
         setStylishScroll();
         manageLeftSideMenu();
-        //codeSecurity();
+        // codeSecurity();
       },
 
       afterLoadThePage: function () {
