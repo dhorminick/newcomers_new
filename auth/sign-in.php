@@ -143,7 +143,7 @@
 						</div>
                         <hr>
                         <div class="col-lg-12 text-center" style="margin-top:20px;">
-                            Don't have an account? <a href="sign-in.php" style="text-decoration: underline;">Sign up</a>
+                            Don't have an account? <a href="sign-up" style="text-decoration: underline;">Sign up</a>
 						</div>
 					</div>
 				</form>
@@ -157,6 +157,11 @@
 </body>
 
 </html>
+<style>
+    .btn.button-md{
+        color: white !important;
+    }
+</style>
 <script>
     $(".fyeviu").on("click", function () {
     var x = document.getElementById("pass");

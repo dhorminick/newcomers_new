@@ -5,22 +5,21 @@
     require $file_dir.'inc/config.inc.php'; 
     require $file_dir.'inc/mail.inc.php'; 
 
+    $signedIn = false;
     if (isset($_SESSION["loggedIn"]) == true || isset($_SESSION["loggedIn"]) === true) {
         $signedIn = true;
     } else {}
-    $signedIn = false;
     $message = [];
 
-    if (isset($_POST['create-account'])) {
+    if (isset($_POST['submit'])) {
 
         $email = sanitizePlus($_POST["email"]);
         $password = sanitizePlus($_POST["password"]);
-        $c_password = sanitizePlus($_POST["c_password"]);
-        $f_name = sanitizePlus($_POST["firstname"]);
-        $l_name = sanitizePlus($_POST["lastname"]);
+        $c_password = sanitizePlus($_POST["password"]);
+        $f_name = sanitizePlus($_POST["name"]);
         $datetime = date("Y-m-d H:i:s");
 
-        if (isset($email) && isset($password) && isset($c_password) && isset($f_name) && isset($l_name)) {
+        if (isset($email) && isset($password) && isset($f_name)) {
             # confirm password
             if ($password === $c_password) {
                 #select all mails
@@ -44,18 +43,19 @@
                         #encrypt password
                         $password = weirdlyEncode($password);
                         #add user to db
-                        $createNewUser = "INSERT INTO newcomers_users (`email`, `password`, `firstname`, `lastname`, `phone`, `activated`, `otp`, `token`, `reg_date`) VALUES ('$email', '$password', '$f_name', '$f_name', '$phone', 'false', '$confirmation_link', '$otp')";
+                        $createNewUser = "INSERT INTO newcomers_users (`email`, `password`, `firstname`, `phone`, `activated`, `otp`, `token`, `reg_date`) VALUES ('$email', '$password', '$f_name', '$phone', 'false', '$confirmation_link', '$otp')";
                         $userCreated = $con->query($createNewUser);
                         if ($userCreated) {
                             #done
                             #redirect to activate-account.php
                             
                         }else{
-                           #error, error inserting to db 
+                           #error, error inserting to db
+                           array_push($message, "Error 502: Error!!"); 
                         }
                     }else{
                         #error, otp unsuccessful
-                        array_push($message, "Error 502: Error Sending OTP!! ".$_sentmail['error']);
+                        array_push($message, "Error 502: Error Sending OTP - ".$_sentmail['error']);
                     }
                 }
             } else {
@@ -65,71 +65,83 @@
             # error ,missing params
             array_push($message, "Error 402: Missing Registration Parameters!!");
         }
-        
-
-        
-        
-    
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account <?php echo $site; ?></title>
 
-    <?php include $file_dir.'inc/style.layout.php'; ?>
+	<title>Sign Up <?php echo $site; ?></title>
+	<?php include $file_dir.'inc/tags.layout.php'; ?>
+	<?php include $file_dir.'inc/style.layout.php'; ?>
+	<link rel="stylesheet" href="../assets/main.css">
+	
 </head>
- <body id="bg">
-  <div class="page-wraper">
+<body id="bg">
+<div class="page-wraper">
 	<div id="loading-icon-bx"></div>
 	<div class="account-form">
-		<div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-			<a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+		<div class="account-head" style="background-image:url(../assets/images/background/bg2.jpg);">
+			<a href="index.html"><img src="../assets/images/logo-white-2.png" alt=""></a>
 		</div>
 		<div class="account-form-inner">
-			<div class="account-container">
-				<div class="heading-bx left">
-					<h2 class="title-head">Sign Up <span>Now</span></h2>
-					<p>Login Your Account <a href="login.html">Click here</a></p>
+            <div class="account-container">
+                <div class="heading-bx left">
+                    <?php include $file_dir.'inc/alert.inc.php'; ?>
+					<h2 style="margin-bottom: 0px !important;">Create Account!!</h2>
+                    <p>Please enter your details to create your account:</p>
 				</div>	
-				<form class="contact-bx">
+				<form class="contact-bx" method="post">
 					<div class="row placeani">
-						<div class="col-lg-12">
+                        <div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group">
-									<label>Your Name</label>
-									<input name="dzName" type="text" required="" class="form-control">
+									<label for="name">Full Name:</label>
+									<input name="name" type="text" required="" id="name" class="form-control">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group">
-									<label>Your Email Address</label>
-									<input name="dzName" type="email" required="" class="form-control">
+									<label for="email">Email Address:</label>
+									<input name="email" type="email" required="" id='email' class="form-control">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="input-group"> 
-									<label>Your Password</label>
-									<input name="dzEmail" type="password" class="form-control" required="">
+									<label for="pass">Password:</label>
+                                    <div class="input-group" style="display:flex;flex-direction: row; flex-wrap: nowrap;">
+                                        <input type="password" class="form-control" name="password" id="pass" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text fyeviu" style="cursor:pointer;">
+                                                <i class="fa fa-eye"></i>
+                                            </div>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12 m-b30">
-							<button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
+                        <div class="form-group center confirm_auth">
+                            <br>
+                            <input type="checkbox" id="confirm_auth">
+                            By confirming, you agree to our <a href="http://">Candidate Guidelines</a>, <a href="http://">Terms of Use</a> and <a href="http://">Privacy Policy</a>
+                        </div>
+						<div class="col-lg-12" style="margin-bottom: 10px;">
+							<button name="submit" type="submit" disabled id="btn_auth" class="btn button-md" style="width:100%;">Create Account</button>
 						</div>
-						<div class="col-lg-12">
-							<h6>Sign Up with Social media</h6>
+						<div class="col-lg-12 text-center">
+                            <h6>or</h6>
 							<div class="d-flex">
-								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
 								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
 							</div>
+						</div>
+                        <hr>
+                        <div class="col-lg-12 text-center" style="margin-top:20px;">
+                            ALready have an account? <a href="sign-in" style="text-decoration: underline;">Sign In</a>
 						</div>
 					</div>
 				</form>
@@ -137,16 +149,14 @@
 		</div>
 	</div>
 </div>
-   
-    
-    <?php include $file_dir.'inc/auth_footer.layout.php'; ?>
-    <?php include $file_dir.'inc/scripts.layout.php'; ?>
+<!-- External JavaScripts -->
+<?php include $file_dir.'inc/scripts.layout.php'; ?>
 </body>
-</html>
 
+</html>
 <style>
-    .row_card{
-        margin-top: 30px;
+    .btn.button-md{
+        color: white !important;
     }
     .form-group.center{
         text-align: center;
@@ -154,6 +164,14 @@
     .btn:disabled{
         cursor: not-allowed;
     }
+    form.contact-bx input.form-control:-internal-autofill-selected {
+        background-color: transparent !important;
+    }
+    .form-group.center.confirm_auth a{
+        margin-bottom: 2px;
+        border-bottom: 1px solid var(--primary);
+    }
+    
 </style>
 <script>
     $("#confirm_auth").click(function (e) {
@@ -175,16 +193,4 @@
         x.type = "password";
     }
     });
-    $(".fyeviui").on("click", function () {
-    var x = document.getElementById("c_pass");
-    if (x.type === "password") {
-        $(".fyeviui i").attr("class", "fa fa-eye-slash");
-        x.type = "text";
-    } else {
-        $(".fyeviui i").attr("class", "fa fa-eye");
-        x.type = "password";
-    }
-    });
 </script>
-
-

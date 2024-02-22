@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $file_dir = '';
     $file_subdir = '';
     include $file_dir.'inc/config.inc.php';

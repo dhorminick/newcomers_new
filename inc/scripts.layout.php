@@ -12,7 +12,6 @@
 <script src="<?php echo $file_dir; ?>assets/vendors/owl-carousel/owl.carousel.js"></script>
 <script src="<?php echo $file_dir; ?>assets/js/functions.js"></script>
 <script src="<?php echo $file_dir; ?>assets/js/contact.js"></script>
-<script src='<?php echo $file_dir; ?>assets/vendors/switcher/switcher.js'></script>
 
 <script>
 			
