@@ -209,7 +209,7 @@
               <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="service-bx">
                   <div class="action-box">
-                    <img src="assets/images/our-services/pic1.jpg" alt="" />
+                    <img src="assets/images/blog/latest-blog/WhatsApp-Image-2023-11-19-at-11.40.09_f248ff06-e1700418583691-400x300.jpg" alt="" />
                   </div>
                   <div class="info-bx text-center">
                     <div class="feature-box-sm radius bg-white">
@@ -223,7 +223,7 @@
               <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="service-bx">
                   <div class="action-box">
-                    <img src="assets/images/our-services/pic2.jpg" alt="" />
+                    <img src="assets/images/event/event_516996000-e1700323520913.webp" alt="" />
                   </div>
                   <div class="info-bx text-center">
                     <div class="feature-box-sm radius bg-white">
@@ -237,7 +237,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="service-bx m-b0">
                   <div class="action-box">
-                    <img src="assets/images/our-services/pic3.jpg" alt="" />
+                    <img src="assets/images/event/IMG_1097-scaled-e1700408816788-400x300.jpg" alt="" />
                   </div>
                   <div class="info-bx text-center">
                     <div class="feature-box-sm radius bg-white">
@@ -333,7 +333,7 @@
                   <!-- @Dhorminick use php to add event titles and dates here -->
                   <div class="event-bx">
                     <div class="action-box">
-                      <img src="assets/images/event/pic4.jpg" alt="" />
+                      <img src="assets/images/event/event_516996000-e1700323520913.webp" alt="" />
                     </div>
                     <div class="info-bx d-flex">
                       <div>
@@ -366,7 +366,7 @@
                 <div class="item">
                   <div class="event-bx">
                     <div class="action-box">
-                      <img src="assets/images/event/pic3.jpg" alt="" />
+                      <img src="assets/images/event/IMG_0976-scaled-jpg-430x323.webp" alt="" />
                     </div>
                     <div class="info-bx d-flex">
                       <div>
@@ -377,7 +377,7 @@
                       </div>
                       <div class="event-info">
                         <h4 class="event-title">
-                          <a href="#">The Learning Hub: A Day of Discovery</a>
+                          <a href="#">Chinese International Student Orientation – TMU</a>
                         </h4>
                         <ul class="media-post">
                           <li>
@@ -399,7 +399,7 @@
                 <div class="item">
                   <div class="event-bx">
                     <div class="action-box">
-                      <img src="assets/images/event/pic2.jpg" alt="" />
+                      <img src="assets/images/event/IMG_1097-scaled-e1700408816788-400x300.jpg" alt="" />
                     </div>
                     <div class="info-bx d-flex">
                       <div>
@@ -410,7 +410,7 @@
                       </div>
                       <div class="event-info">
                         <h4 class="event-title">
-                          <a href="#">Mindful Mornings: A Community Event for Growth</a>
+                          <a href="#">Learning Hub: A Day of Discovery</a>
                         </h4>
                         <ul class="media-post">
                           <li>
@@ -456,7 +456,7 @@
               <div class="item">
                 <div class="testimonial-bx">
                   <div class="testimonial-thumb">
-                    <img src="assets/images/testimonials/pic1.jpg" alt="" />
+                    <img src="assets/images/testimonials/pic2.jpg" alt="" />
                   </div>
                   <div class="testimonial-info">
                     <h5 class="name">Peter Packer</h5>
@@ -475,11 +475,11 @@
               <div class="item">
                 <div class="testimonial-bx">
                   <div class="testimonial-thumb">
-                    <img src="assets/images/testimonials/pic2.jpg" alt="" />
+                    <img src="assets/images/testimonials/pic1.jpg" alt="" />
                   </div>
                   <div class="testimonial-info">
-                    <h5 class="name">Peter Packer</h5>
-                    <p>-Art Director</p>
+                    <h5 class="name">Anna Becker</h5>
+                    <p>-Event Director</p>
                   </div>
                   <div class="testimonial-content">
                     <p>
@@ -503,8 +503,7 @@
               <div class="col-md-12 heading-bx left">
                 <h2 class="title-head">Recent <span>Events</span></h2>
                 <p>
-                  It is a long established fact that a reader will be
-                  distracted by the readable content of a page
+                  Check out some of our recents Events fill with fun and entertainment
                 </p>
               </div>
             </div>
@@ -512,24 +511,22 @@
               <div class="item">
                 <div class="recent-news">
                   <div class="action-box">
-                    <img src="assets/images/blog/latest-blog/pic1.jpg" alt="" />
+                    <img src="assets/images/blog/latest-blog/IMG_1510-scaled-jpg-430x323 - Copy (3).webp" alt="" />
                   </div>
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <a href="#"><i class="fa fa-calendar"></i>Jan 02 2019</a>
+                        <a href="#"><i class="fa fa-calendar"></i>Jan 04 2024</a>
                       </li>
                       <li>
                         <a href="#"><i class="fa fa-user"></i>By William</a>
                       </li>
                     </ul>
                     <h5 class="post-title">
-                      <a href="blog-details.html">This Story Behind Education Will Haunt You
-                        Forever.</a>
+                      <a href="blog-details.html">New year Social Networking.</a>
                     </h5>
                     <p>
-                      Knowing that, you’ve optimised your pages countless
-                      amount of times, written tons.
+                      Socialize hangout and have fun.
                     </p>
                     <div class="post-extra">
                       <a href="#" class="btn-link">READ MORE</a>
@@ -541,20 +538,19 @@
               <div class="item">
                 <div class="recent-news">
                   <div class="action-box">
-                    <img src="assets/images/blog/latest-blog/pic2.jpg" alt="" />
+                    <img src="assets/images/blog/latest-blog/WhatsApp-Image-2023-11-19-at-11.40.09_f248ff06-e1700418583691-400x300.jpg" alt="" />
                   </div>
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <a href="#"><i class="fa fa-calendar"></i>Feb 05 2019</a>
+                        <a href="#"><i class="fa fa-calendar"></i> July 8 2023</a>
                       </li>
                       <li>
                         <a href="#"><i class="fa fa-user"></i>By John</a>
                       </li>
                     </ul>
                     <h5 class="post-title">
-                      <a href="blog-details.html">What Will Education Be Like In The Next 50
-                        Years?</a>
+                      <a href="blog-details.html">Summer Rooftop Networking Party</a>
                     </h5>
                     <p>
                       As desperate as you are right now, you have done
@@ -570,19 +566,19 @@
               <div class="item">
                 <div class="recent-news">
                   <div class="action-box">
-                    <img src="assets/images/blog/latest-blog/pic3.jpg" alt="" />
+                    <img src="assets/images/blog/latest-blog/IMG_0858-scaled-e1700414648249-430x323.jpg" alt="" />
                   </div>
                   <div class="info-bx">
                     <ul class="media-post">
                       <li>
-                        <a href="#"><i class="fa fa-calendar"></i>April 14 2019</a>
+                        <a href="#"><i class="fa fa-calendar"></i>April 14 2023</a>
                       </li>
                       <li>
                         <a href="#"><i class="fa fa-user"></i>By George</a>
                       </li>
                     </ul>
                     <h5 class="post-title">
-                      <a href="blog-details.html">Master The Skills Of Education And Be.</a>
+                      <a href="blog-details.html">Pub Night for Newcomers </a>
                     </h5>
                     <p>
                       You will see in the guide all my years of valuable
