@@ -1,7 +1,16 @@
 <?php
+   session_start();
     $file_dir = '';
+    $file_subdir = '';
     include $file_dir.'inc/config.inc.php';
     include $file_dir.'inc/db.inc.php'; 
+    $hasRegisteredEvent = false;
+
+    if (isset($_SESSION["loggedIn"]) == true || isset($_SESSION["loggedIn"]) === true) {
+        $signedIn = true;
+    } else {
+        $signedIn = false;
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +34,7 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner2.jpg);">
+        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/blog/latest-blog/WhatsApp-Image-2023-11-19-at-11.40.09_f248ff06-e1700418583691-400x300.jpg);">
             <div class="container">
                 <div class="page-banner-entry">
                     <h1 class="text-white">Events</h1>
